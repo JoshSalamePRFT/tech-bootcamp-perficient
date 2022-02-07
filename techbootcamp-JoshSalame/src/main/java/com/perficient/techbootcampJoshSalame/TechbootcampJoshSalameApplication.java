@@ -9,5 +9,4 @@ public class TechbootcampJoshSalameApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(TechbootcampJoshSalameApplication.class, args);
 	}
-
 }

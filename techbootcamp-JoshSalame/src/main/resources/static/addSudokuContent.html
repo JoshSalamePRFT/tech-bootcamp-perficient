@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>New Sudoku Content Form</title>
+	<link rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+			integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+			crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+</head>
+
+<body>
+	<div id="topNav">
+        <a href="index.html">Home	</a>
+        <a href="addSudokuMetaData.html">Add Sudoku Puzzle	</a>
+        <a href="addSudokuContent.html">Add Sudoku Content</a>
+    </div>
+
+	<div class="container"> 
+		<h1>Sudoku Tracker App</h1>
+		<hr>
+		<h2>Save Sudoku Content</h2>
+		
+		<form action="#" id="addSudokuContent">
+			<input type="text" id="row_value" name="row_value" placeholder="Row" class="form-control mb-4 col-4">
+			<input type="text" id="column_value" name="column_value" placeholder="Column" class="form-control mb-4 col-4">
+			<input type="text" id="startValue" name="startValue" placeholder="Given Value (0 if not given)" class="form-control mb-4 col-4">
+			<input type="text" id="solvedValue" name="solvedValue" placeholder="Solved Value" class="form-control mb-4 col-4">
+			<input type="number" id="sudoku_id" name="sudoku_id" placeholder="Sudoku Puzzle ID" class="form-control mb-4 col-4">
+		
+			<button onclick="addSudokuContent()" class="btn btn-info col-2">Save Sudoku Content</button>
+		</form>
+	</div>
+</body>
+
+</html>

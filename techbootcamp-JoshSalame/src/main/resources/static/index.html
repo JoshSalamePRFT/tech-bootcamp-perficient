@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Sudoku Meta Data Home Page</title>
+		<link rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+			integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+			crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+		<!-- <link href="styles/styles.css" rel="stylesheet"> -->
+	</head>
+	
+	<body>
+		<div id="topNav">
+	        <a href="index.html">Home	</a>
+	        <a href="addSudokuMetaData.html">Add Sudoku Puzzle	</a>
+	        <a href="addSudokuContent.html">Add Sudoku Content</a>
+	    </div>
+		
+		<div class="container my-2">
+			<h1>Sudoku Tracker App</h1>
+			<hr>
+			<!--<a href="/addSudokuMetaData" class="btn btn-primary btn-sm mb-3"> Add Sudoku Puzzle </a>
+
+			<table border="1" class="table table-striped table-responsive-md">
+				<thead>
+					<tr>
+						<th>Puzzle Name</th>
+						<th>Creator Name</th>
+						<th>Rules</th>
+						<th>Player Name</th>
+						<th>Completion Time (Minutes)</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="sudokuMetaData : ${listSudokuMetaData}">
+						<td th:text="${sudokuMetaData.puzzleName}"></td>
+						<td th:text="${sudokuMetaData.creator}"></td>
+						<td th:text="${sudokuMetaData.puzzleRules}"></td>
+						<td th:text="${sudokuMetaData.username}"></td>
+						<td th:text="${sudokuMetaData.completionTime}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>-->
+		
+		<div id="tables" class="container my-2">
+            <div id="sudokuMetaDataTableDiv">
+                <h1>Sudoku Puzzles</h1>
+                <table id="sudokuMetaDataTable" border="1" class="table table-striped table-responsive-md">
+                    <tr>
+                        <th>Puzzle Name</th>
+                        <th>Creator</th>
+                        <th>Rules</th>
+                        <th>Player Name</th>
+                        <th>Completion Time</th>
+                    </tr>
+                </table>
+            </div><br>
+            <div id="sudokuContentTableDiv" class="container my-2">
+                <h1>Sudoku Content</h1>
+                <table id="sudokuContentTable" border="1" class="table table-striped table-responsive-md">
+                    <tr>
+                        <th>Row</th>
+                        <th>Column</th>
+                        <th>Given Value (0 if not given)</th>
+                        <th>Solved Value</th>
+                        <th>Sudoku Puzzle ID</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+		
+		
+		
+		
+		<!--<p id="input-display"></p> -->
+		
+		
+		<!--
+		<div>
+			<form action="index.html" method="POST">
+				<label for="username">Username:</label>
+				<input type="text" id="username" name="username"><br>
+				<label for="puzzle-name">Puzzle Name:</label>
+				<input type="text" id="puzzle-name" name="puzzle-name"><br>
+				<label for="completion-time">Completion Time:</label>
+				<input type="time" id="completion-time" name="completion-time"><br>
+				<label for="solved-board">Solved Board:</label><br>
+				<div>
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0"><br>
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0"><br>
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0"><br>
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0"><br>
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0"><br>
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0"><br>
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0"><br>
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0"><br>
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0">
+					<input type="number" class="array" name="array[]" value="0"><br>
+				</div>
+			
+				<button id="submit-button" type="button" onclick="printSudokuBoard()">Submit</button>
+			</form>
+		</div>
+		
+		
+		
+		<script>
+			//document.getElementsById("submit").onclick = printSudokuBoard();
+	
+			function printSudokuBoard() {
+				var toPrint = "You inputted the following board: <br>";
+				document.getElementById("input-display").innerHTML = toPrint;
+				var input = document.getElementsByClassName("array");
+				for (var i = 0; i < 9; i++) {
+					for (var j = 0; j < 9; j++) {
+						var element = input[i*9 + j].value;
+						toPrint = toPrint + element + " ";
+					}
+					toPrint = toPrint + "<br>";
+				}
+				
+				document.getElementById("input-display").innerHTML = toPrint;
+			}
+		</script>
+		-->
+	</body>
+</html>
